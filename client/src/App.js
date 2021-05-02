@@ -1,5 +1,7 @@
 import './App.css'
 
+import Searchbar from './components/Searchbar/Searchbar'
+
 function App() {
   const fetchData = () => {
     fetch('/getmovies', {
@@ -19,6 +21,7 @@ function App() {
     <>
       <div>The Shoppies</div>
       <button onClick={fetchData}>Fetch Data</button>
+      <Searchbar />
     </>
   )
 }
