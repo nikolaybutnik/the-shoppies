@@ -1,11 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect } from 'react'
 
-const Searchbar = () => {
-  const [searchTerm, setSearchTerm] = useState('')
-
-  const fetchData = (e, search) => {
-    e.preventDefault()
-    fetch(`/getmovies/${search}`, {
+const Searchbar = ({ props: { searchTerm, setSearchTerm } }) => {
+  useEffect(() => {
+    console.log(searchTerm)
+    fetch(`/getmovies/${searchTerm}`, {
       method: 'GET',
       headers: {
         Accept: 'application/json, text/plain, */*',
@@ -17,17 +15,17 @@ const Searchbar = () => {
         console.log(data.data)
       })
       .catch((err) => console.log(err))
-  }
+  }, [searchTerm])
 
   return (
-    <form onSubmit={(e) => fetchData(e, searchTerm)}>
+    <form>
       <label htmlFor="movieSearch">Search for a movie:</label>
       <input
         type="text"
         name="movieSearch"
-        onChange={(e) =>
+        onChange={(e) => {
           setSearchTerm(e.target.value.trim().replace(/ /g, '+'))
-        }
+        }}
       ></input>
     </form>
   )
