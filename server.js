@@ -20,7 +20,10 @@ app.get('/getmovies/:search', (req, res) => {
     `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_API_KEY}&s=${req.params.search}&type=movie&page=1`
   )
     .then((res) => res.json())
-    .then((data) => res.send({ data: data }))
+    .then((data) => {
+      // console.log(data)
+      res.send({ data: data })
+    })
     .catch((err) => {
       res.status(500).json(err)
     })
