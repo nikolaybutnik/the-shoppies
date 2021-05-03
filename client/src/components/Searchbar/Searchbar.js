@@ -1,21 +1,30 @@
 import React, { useEffect } from 'react'
 
-const Searchbar = ({ props: { searchTerm, setSearchTerm } }) => {
+const Searchbar = ({
+  props: { searchTerm, setSearchTerm, searchResults, setSearchResults },
+}) => {
   useEffect(() => {
-    console.log(searchTerm)
-    fetch(`/getmovies/${searchTerm}`, {
-      method: 'GET',
-      headers: {
-        Accept: 'application/json, text/plain, */*',
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data.data)
+    if (searchTerm !== '') {
+      fetch(`/getmovies/${searchTerm}`, {
+        method: 'GET',
+        headers: {
+          Accept: 'application/json, text/plain, */*',
+          'Content-Type': 'application/json',
+        },
       })
-      .catch((err) => console.log(err))
-  }, [searchTerm])
+        .then((res) => res.json())
+        .then((data) => {
+          setSearchResults(data.data)
+        })
+        .catch((err) => console.log(err))
+    }
+  }, [searchTerm, setSearchResults])
+
+  useEffect(() => {
+    if (searchResults !== null) {
+      console.log(searchResults)
+    }
+  }, [searchResults])
 
   return (
     <form>
