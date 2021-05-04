@@ -5,7 +5,7 @@ const Searchbar = ({
 }) => {
   useEffect(() => {
     if (searchTerm !== '') {
-      fetch(`/getmovies/${searchTerm}`, {
+      fetch(`/getmovies/${searchTerm}/1`, {
         method: 'GET',
         headers: {
           Accept: 'application/json, text/plain, */*',

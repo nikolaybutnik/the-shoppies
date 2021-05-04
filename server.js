@@ -15,9 +15,9 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // Define API routes here
-app.get('/getmovies/:search', (req, res) => {
+app.get('/getmovies/:search/:page', (req, res) => {
   fetch(
-    `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_API_KEY}&s=${req.params.search}&type=movie&page=1`
+    `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_API_KEY}&s=${req.params.search}&type=movie&page=${req.params.page}`
   )
     .then((res) => res.json())
     .then((data) => {
