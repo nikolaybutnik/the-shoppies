@@ -1,7 +1,12 @@
 .searchResult {
   display: flex;
   margin: 5px;
+  border: 2px solid grey;
+  max-width: 500px;
+  padding: 5px;
   .resultPoster {
-    width: 150px;
+    width: 125px;
+    height: 100%;
+    margin: auto 10px auto 0px;
   }
 }
