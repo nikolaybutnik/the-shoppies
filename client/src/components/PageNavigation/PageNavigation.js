@@ -6,8 +6,8 @@ const PageNavigation = ({
 }) => {
   const [currentPage, setCurrentPage] = useState(1)
 
-  const fetchPage = (e) => {
-    fetch(`/getmovies/${searchTerm}/${e.target.textContent}`, {
+  const fetchPage = (page) => {
+    fetch(`/getmovies/${searchTerm}/${page}`, {
       method: 'GET',
       headers: {
         Accept: 'application/json, text/plain, */*',
@@ -35,8 +35,8 @@ const PageNavigation = ({
                     currentPage === item + 1 ? 'active' : ''
                   }`}
                   onClick={(e) => {
-                    fetchPage(e)
-                    setCurrentPage(e.target.textContent)
+                    fetchPage(item + 1)
+                    setCurrentPage(item + 1)
                   }}
                 >
                   {item + 1}
