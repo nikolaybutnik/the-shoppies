@@ -10,19 +10,3 @@
     margin: auto 10px auto 0px;
   }
 }
-
-.pageNumberList {
-  display: flex;
-  max-width: 500px;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
-  .active {
-    color: black;
-    font-weight: bold;
-  }
-  .pageNumber {
-    color: grey;
-    margin: 5px;
-    cursor: pointer;
-  }
-}

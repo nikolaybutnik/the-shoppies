@@ -1,1 +1,21 @@
-/* No CSS *//*# sourceMappingURL=PageNavigation.css.map */
+.pageNumberList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 500px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.pageNumberList .active {
+  color: black;
+  font-weight: bold;
+}
+
+.pageNumberList .pageNumber {
+  color: grey;
+  margin: 5px;
+  cursor: pointer;
+}
+/*# sourceMappingURL=PageNavigation.css.map */
