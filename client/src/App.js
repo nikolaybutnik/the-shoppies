@@ -7,12 +7,15 @@ import SearchResults from './components/SearchResults/SearchResults'
 function App() {
   const [searchTerm, setSearchTerm] = useState('')
   const [searchResults, setSearchResults] = useState(null)
+  const [currentPage, setCurrentPage] = useState(1)
 
   const props = {
     searchTerm,
     setSearchTerm,
     searchResults,
     setSearchResults,
+    currentPage,
+    setCurrentPage,
   }
   return (
     <>

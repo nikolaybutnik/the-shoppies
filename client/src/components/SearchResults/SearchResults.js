@@ -4,7 +4,13 @@ import './SearchResults.css'
 import PageNavigation from '../PageNavigation/PageNavigation'
 
 const Searchbar = ({
-  props: { searchResults, setSearchResults, searchTerm },
+  props: {
+    searchResults,
+    setSearchResults,
+    searchTerm,
+    currentPage,
+    setCurrentPage,
+  },
 }) => {
   return (
     <div>
@@ -40,7 +46,15 @@ const Searchbar = ({
             </div>
           )
         })}
-      <PageNavigation props={{ searchResults, setSearchResults, searchTerm }} />
+      <PageNavigation
+        props={{
+          searchResults,
+          setSearchResults,
+          searchTerm,
+          currentPage,
+          setCurrentPage,
+        }}
+      />
     </div>
   )
 }

@@ -1,11 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './PageNavigation.css'
 
 const PageNavigation = ({
-  props: { searchResults, setSearchResults, searchTerm },
+  props: {
+    searchResults,
+    setSearchResults,
+    searchTerm,
+    currentPage,
+    setCurrentPage,
+  },
 }) => {
-  const [currentPage, setCurrentPage] = useState(1)
-
   const fetchPage = (page) => {
     fetch(`/getmovies/${searchTerm}/${page}`, {
       method: 'GET',
@@ -30,11 +34,10 @@ const PageNavigation = ({
               return (
                 <div
                   key={item + 1}
-                  id={`page${item + 1}`}
                   className={`pageNumber ${
                     currentPage === item + 1 ? 'active' : ''
                   }`}
-                  onClick={(e) => {
+                  onClick={() => {
                     fetchPage(item + 1)
                     setCurrentPage(item + 1)
                   }}
