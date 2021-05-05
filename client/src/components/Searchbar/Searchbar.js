@@ -1,10 +1,17 @@
 import React, { useEffect } from 'react'
 
 const Searchbar = ({
-  props: { searchTerm, setSearchTerm, searchResults, setSearchResults },
+  props: {
+    searchTerm,
+    setSearchTerm,
+    searchResults,
+    setSearchResults,
+    setCurrentPage,
+  },
 }) => {
   useEffect(() => {
     if (searchTerm !== '') {
+      setCurrentPage(1)
       fetch(`/getmovies/${searchTerm}/1`, {
         method: 'GET',
         headers: {
@@ -18,7 +25,7 @@ const Searchbar = ({
         })
         .catch((err) => console.log(err))
     }
-  }, [searchTerm, setSearchResults])
+  }, [searchTerm, setCurrentPage, setSearchResults])
 
   useEffect(() => {
     if (searchResults !== null) {
