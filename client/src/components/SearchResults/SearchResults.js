@@ -1,7 +1,11 @@
 import React from 'react'
 import './SearchResults.css'
 
-const Searchbar = ({ props: { searchResults } }) => {
+import PageNavigation from '../PageNavigation/PageNavigation'
+
+const Searchbar = ({
+  props: { searchResults, setSearchResults, searchTerm },
+}) => {
   return (
     <div>
       {searchResults &&
@@ -36,27 +40,7 @@ const Searchbar = ({ props: { searchResults } }) => {
             </div>
           )
         })}
-      {searchResults && searchResults.Response !== 'False' && (
-        <div className="pageNumberList">
-          {[...Array(Math.ceil(searchResults.totalResults / 10)).keys()].map(
-            (item) => {
-              if (item === 0) {
-                return (
-                  <div key={item + 1} id="active" className="pageNumber">
-                    {item + 1}
-                  </div>
-                )
-              } else {
-                return (
-                  <div key={item + 1} className="pageNumber">
-                    {item + 1}
-                  </div>
-                )
-              }
-            }
-          )}
-        </div>
-      )}
+      <PageNavigation props={{ searchResults, setSearchResults, searchTerm }} />
     </div>
   )
 }

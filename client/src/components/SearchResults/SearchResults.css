@@ -24,7 +24,7 @@
   margin-bottom: 20px;
 }
 
-.pageNumberList #active {
+.pageNumberList .active {
   color: black;
   font-weight: bold;
 }
