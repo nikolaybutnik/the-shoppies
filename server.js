@@ -45,8 +45,10 @@ app.post('/newnomination', async (req, res) => {
     const movieNominated = !!(await Nomination.countDocuments({
       imdbID: req.body.imdbID,
     }))
-    // If not already nominated, save movie to database, else return error
-    if (!movieNominated) {
+    // Check that the limit of 5 movies isn't reached
+    const nominationLimit = await Nomination.countDocuments()
+    // If above conditions are cleared, save movie to DB
+    if (!movieNominated && nominationLimit < 5) {
       Nomination.create(req.body)
         .then((nomination) => {
           console.log(nomination)
