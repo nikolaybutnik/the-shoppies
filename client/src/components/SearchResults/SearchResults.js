@@ -21,7 +21,7 @@ const Searchbar = ({
             <div
               id={item.imdbID}
               className="searchResult"
-              key={item.imdbID + Math.floor(Math.random() * 100)}
+              key={item.imdbID + Math.floor(Math.random() * 1000)}
             >
               <img
                 className="resultPoster"

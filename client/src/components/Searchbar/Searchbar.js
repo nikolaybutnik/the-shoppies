@@ -10,7 +10,9 @@ const Searchbar = ({
   },
 }) => {
   useEffect(() => {
-    if (searchTerm !== '') {
+    if (searchTerm === '') {
+      setSearchResults(null)
+    } else {
       setCurrentPage(1)
       fetch(`/getmovies/${searchTerm}/1`, {
         method: 'GET',
