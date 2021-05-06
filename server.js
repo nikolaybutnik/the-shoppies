@@ -5,6 +5,7 @@ const path = require('path')
 const PORT = process.env.PORT || 3001
 const app = express()
 const fetch = require('node-fetch')
+const mongoose = require('mongoose')
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }))
@@ -13,6 +14,14 @@ app.use(express.json())
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'))
 }
+
+// Connect MongoDB
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/theshoppies', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false,
+  useCreateIndex: true,
+})
 
 // Define API routes here
 app.get('/getmovies/:search/:page', (req, res) => {
