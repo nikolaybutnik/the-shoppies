@@ -12,6 +12,28 @@ const Searchbar = ({
     setCurrentPage,
   },
 }) => {
+  const handleNomination = (e) => {
+    const movie = e.target.parentNode.parentNode
+    const newNomination = {
+      poster: movie.children[0].src,
+      title: movie.children[1].children[0].textContent,
+      year: movie.children[1].children[1].textContent.slice(-4),
+      imdbID: movie.id,
+    }
+
+    fetch('/newnomination', {
+      method: 'POST',
+      body: JSON.stringify(newNomination),
+      headers: {
+        Accept: 'application/json, text/plain, */*',
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data.data))
+      .catch((err) => console.log(err))
+  }
+
   return (
     <div>
       {searchResults &&
@@ -36,9 +58,10 @@ const Searchbar = ({
                 <h3>{`${item.Title}`}</h3>
                 <h5>{`Year released: ${item.Year}`}</h5>
                 <button
-                  onClick={(e) =>
-                    console.log(e.target.parentNode.parentNode.id)
-                  }
+                  onClick={(e) => {
+                    // console.log(e.target.parentNode.parentNode.id)
+                    handleNomination(e)
+                  }}
                 >
                   Nominate
                 </button>

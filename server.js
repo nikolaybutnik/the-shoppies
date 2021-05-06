@@ -31,12 +31,37 @@ app.get('/getmovies/:search/:page', (req, res) => {
   )
     .then((res) => res.json())
     .then((data) => {
-      // console.log(data)
       res.send({ data: data })
     })
     .catch((err) => {
       res.status(500).json(err)
     })
+})
+
+app.post('/newnomination', (req, res) => {
+  try {
+    // Check if movie is already nominated
+    // const movieNominated = !!(await Nomination.countDocuments({ imdbID: req.body.imdbID }))
+    // console.log(movieNominated)
+    Nomination.create(req.body)
+      .then((nomination) => {
+        console.log(nomination)
+        res.status(201).send({ data: nomination })
+      })
+      .catch((err) => {
+        res.status(400).json(err)
+      })
+  } catch (err) {
+    res.status(500).send({
+      errors: [
+        {
+          status: 'Server error',
+          code: '500',
+          title: 'Problem saving document to the database.',
+        },
+      ],
+    })
+  }
 })
 
 // Send every other request to the React app
