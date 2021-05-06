@@ -3,7 +3,7 @@ import './SearchResults.css'
 
 import PageNavigation from '../PageNavigation/PageNavigation'
 
-const Searchbar = ({
+const SearchResults = ({
   props: {
     searchResults,
     setSearchResults,
@@ -59,7 +59,6 @@ const Searchbar = ({
                 <h5>{`Year released: ${item.Year}`}</h5>
                 <button
                   onClick={(e) => {
-                    // console.log(e.target.parentNode.parentNode.id)
                     handleNomination(e)
                   }}
                 >
@@ -82,4 +81,4 @@ const Searchbar = ({
   )
 }
 
-export default Searchbar
+export default SearchResults

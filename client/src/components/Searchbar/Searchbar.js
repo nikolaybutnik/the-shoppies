@@ -30,8 +30,9 @@ const Searchbar = ({
   }, [searchTerm, setCurrentPage, setSearchResults])
 
   useEffect(() => {
-    if (searchResults !== null) {
+    if (searchResults !== null && searchResults.Response !== 'False') {
       console.log(searchResults)
+      // Code to fetch list of imdbIDs from database
     }
   }, [searchResults])
 

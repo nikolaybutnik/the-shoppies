@@ -38,29 +38,28 @@ app.get('/getmovies/:search/:page', (req, res) => {
     })
 })
 
-app.post('/newnomination', (req, res) => {
+// Route which handles saving new nominations to DB
+app.post('/newnomination', async (req, res) => {
   try {
     // Check if movie is already nominated
-    // const movieNominated = !!(await Nomination.countDocuments({ imdbID: req.body.imdbID }))
-    // console.log(movieNominated)
-    Nomination.create(req.body)
-      .then((nomination) => {
-        console.log(nomination)
-        res.status(201).send({ data: nomination })
-      })
-      .catch((err) => {
-        res.status(400).json(err)
-      })
+    const movieNominated = !!(await Nomination.countDocuments({
+      imdbID: req.body.imdbID,
+    }))
+    // If not already nominated, save movie to database, else return error
+    if (!movieNominated) {
+      Nomination.create(req.body)
+        .then((nomination) => {
+          console.log(nomination)
+          res.status(201).send({ data: nomination })
+        })
+        .catch((err) => {
+          res.status(400).json(err)
+        })
+    } else {
+      res.status(500).json(err)
+    }
   } catch (err) {
-    res.status(500).send({
-      errors: [
-        {
-          status: 'Server error',
-          code: '500',
-          title: 'Problem saving document to the database.',
-        },
-      ],
-    })
+    res.status(500).json(err)
   }
 })
 

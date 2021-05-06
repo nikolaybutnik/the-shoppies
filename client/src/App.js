@@ -17,6 +17,7 @@ function App() {
     currentPage,
     setCurrentPage,
   }
+
   return (
     <>
       <div>The Shoppies</div>
