@@ -6,6 +6,7 @@ const PORT = process.env.PORT || 3001
 const app = express()
 const fetch = require('node-fetch')
 const mongoose = require('mongoose')
+const Nomination = require('./client/src/models/Nomination')
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }))
