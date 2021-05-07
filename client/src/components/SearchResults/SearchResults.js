@@ -50,6 +50,7 @@ const SearchResults = ({
       .then((data) => {
         if (data.data) {
           e.target.disabled = true
+          setExistingNominations(data.data.all)
         }
       })
       .catch((err) => console.log(err))

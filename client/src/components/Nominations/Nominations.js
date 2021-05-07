@@ -6,7 +6,6 @@ const Nominations = ({
 }) => {
   const handleDelete = (e) => {
     const [, deleteID] = e.target.parentNode.parentNode.id.split('+')
-    console.log(deleteID)
     fetch(`/removenomination/${deleteID}`, {
       method: 'DELETE',
       headers: {
@@ -16,7 +15,6 @@ const Nominations = ({
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data.data)
         setExistingNominations(data.data.remaining)
       })
       .catch((err) => console.log(err))

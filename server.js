@@ -50,8 +50,10 @@ app.post('/newnomination', async (req, res) => {
     // If above conditions are cleared, save movie to DB
     if (!movieNominated && nominationLimit < 5) {
       const newNomination = await Nomination.create(req.body)
-      console.log(newNomination)
-      res.status(201).send({ data: newNomination })
+      const allNominations = await Nomination.find({})
+      res
+        .status(201)
+        .send({ data: { new: newNomination, all: allNominations } })
     } else {
       res.status(500).json(err)
     }
