@@ -55,6 +55,12 @@ const SearchResults = ({
       .catch((err) => console.log(err))
   }
 
+  const disableButton = (id) => {
+    if (existingNominations.includes(id)) {
+      return true
+    }
+  }
+
   return (
     <div>
       {searchResults &&
@@ -78,13 +84,17 @@ const SearchResults = ({
               <div>
                 <h3>{`${item.Title}`}</h3>
                 <h5>{`Year released: ${item.Year}`}</h5>
-                <button
-                  onClick={(e) => {
-                    handleNomination(e)
-                  }}
-                >
-                  Nominate
-                </button>
+                {existingNominations && !disableButton(item.imdbID) ? (
+                  <button
+                    onClick={(e) => {
+                      handleNomination(e)
+                    }}
+                  >
+                    Nominate
+                  </button>
+                ) : (
+                  <button disabled>Nominate</button>
+                )}
               </div>
             </div>
           )
