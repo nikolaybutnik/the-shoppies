@@ -8,6 +8,7 @@ function App() {
   const [searchTerm, setSearchTerm] = useState('')
   const [searchResults, setSearchResults] = useState(null)
   const [currentPage, setCurrentPage] = useState(1)
+  const [existingNominations, setExistingNominations] = useState([])
 
   const props = {
     searchTerm,
@@ -16,6 +17,8 @@ function App() {
     setSearchResults,
     currentPage,
     setCurrentPage,
+    existingNominations,
+    setExistingNominations,
   }
 
   return (

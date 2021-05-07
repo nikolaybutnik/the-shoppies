@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './SearchResults.css'
 
 import PageNavigation from '../PageNavigation/PageNavigation'
@@ -10,8 +10,29 @@ const SearchResults = ({
     searchTerm,
     currentPage,
     setCurrentPage,
+    existingNominations,
+    setExistingNominations,
   },
 }) => {
+  useEffect(() => {
+    if (searchResults !== null && searchResults.Response !== 'False') {
+      fetch('/allnominations', {
+        method: 'GET',
+        headers: {
+          Accept: 'application/json, text/plain, */*',
+          'Content-Type': 'application/json',
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => setExistingNominations(data.data))
+        .catch((err) => console.log(err))
+    }
+  }, [searchResults, setExistingNominations])
+
+  useEffect(() => {
+    console.log(existingNominations)
+  }, [existingNominations])
+
   const handleNomination = (e) => {
     const movie = e.target.parentNode.parentNode
     const newNomination = {

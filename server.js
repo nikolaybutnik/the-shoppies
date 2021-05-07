@@ -65,6 +65,16 @@ app.post('/newnomination', async (req, res) => {
   }
 })
 
+// Route which handles checking the DB for existing nominations
+app.get('/allnominations', async (req, res) => {
+  try {
+    const allNominations = await Nomination.distinct('imdbID')
+    res.status(200).send({ data: allNominations })
+  } catch (err) {
+    res.status(500).json(err)
+  }
+})
+
 // Send every other request to the React app
 // Define any API routes before this runs
 app.get('*', (req, res) => {
