@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './App.css'
 
 import Searchbar from './components/Searchbar/Searchbar'
@@ -11,6 +11,21 @@ function App() {
   const [currentPage, setCurrentPage] = useState(1)
   const [existingNominations, setExistingNominations] = useState([])
   const [viewNominations, setViewNominations] = useState(false)
+
+  useEffect(() => {
+    fetch('/allnominations', {
+      method: 'GET',
+      headers: {
+        Accept: 'application/json, text/plain, */*',
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setExistingNominations(data.data)
+      })
+      .catch((err) => console.log(err))
+  }, [])
 
   const props = {
     searchTerm,
