@@ -17,7 +17,7 @@ const Nominations = ({
       .then((res) => res.json())
       .then((data) => {
         console.log(data.data)
-        // receive remaining nominations and set as state
+        setExistingNominations(data.data.remaining)
       })
       .catch((err) => console.log(err))
   }

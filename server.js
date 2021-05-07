@@ -75,6 +75,21 @@ app.get('/allnominations', async (req, res) => {
   }
 })
 
+// Route which nadles the deletion of movie from DB
+app.delete('/removenomination/:id', async (req, res) => {
+  try {
+    const deletedItem = await Nomination.findOneAndDelete({
+      imdbID: req.params.id,
+    })
+    const remainingItems = await Nomination.find({})
+    res
+      .status(200)
+      .send({ data: { deleted: deletedItem, remaining: remainingItems } })
+  } catch (err) {
+    res.status(500).json(err)
+  }
+})
+
 // Send every other request to the React app
 // Define any API routes before this runs
 app.get('*', (req, res) => {
