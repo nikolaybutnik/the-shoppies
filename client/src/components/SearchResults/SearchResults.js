@@ -60,7 +60,8 @@ const SearchResults = ({
   }
 
   const disableButton = (id) => {
-    if (existingNominations.includes(id)) {
+    const nominationsIDs = existingNominations.map((item) => item.imdbID)
+    if (nominationsIDs.includes(id)) {
       return true
     }
   }
