@@ -1,13 +1,7 @@
 import React, { useEffect } from 'react'
 
 const Searchbar = ({
-  props: {
-    searchTerm,
-    setSearchTerm,
-    searchResults,
-    setSearchResults,
-    setCurrentPage,
-  },
+  props: { searchTerm, setSearchTerm, setSearchResults, setCurrentPage },
 }) => {
   useEffect(() => {
     if (searchTerm === '') {

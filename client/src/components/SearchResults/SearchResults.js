@@ -29,10 +29,6 @@ const SearchResults = ({
     }
   }, [searchResults, setExistingNominations])
 
-  // useEffect(() => {
-  //   console.log(existingNominations)
-  // }, [existingNominations])
-
   const handleNomination = (e) => {
     const movie = e.target.parentNode.parentNode
     const newNomination = {
@@ -53,7 +49,7 @@ const SearchResults = ({
       .then((res) => res.json())
       .then((data) => {
         if (data.data) {
-          console.log((e.target.disabled = true))
+          e.target.disabled = true
         }
       })
       .catch((err) => console.log(err))
@@ -61,9 +57,7 @@ const SearchResults = ({
 
   const disableButton = (id) => {
     const nominationsIDs = existingNominations.map((item) => item.imdbID)
-    if (nominationsIDs.includes(id)) {
-      return true
-    }
+    return nominationsIDs.includes(id)
   }
 
   return (
