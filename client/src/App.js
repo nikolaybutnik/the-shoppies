@@ -10,6 +10,7 @@ function App() {
   const [searchResults, setSearchResults] = useState(null)
   const [currentPage, setCurrentPage] = useState(1)
   const [existingNominations, setExistingNominations] = useState([])
+  const [viewNominations, setViewNominations] = useState(false)
 
   const props = {
     searchTerm,
@@ -26,7 +27,22 @@ function App() {
     <>
       <div>The Shoppies</div>
       <Searchbar props={props} />
-      <Nominations props={props} />
+      {existingNominations.length === 5 ? (
+        <>
+          <div>{`You have nominated 5 movies!`}</div>
+          <button onClick={() => setViewNominations(!viewNominations)}>
+            View Nominations
+          </button>
+        </>
+      ) : (
+        <>
+          <div>{`You have nominated ${existingNominations.length} movies, keep going!`}</div>
+          <button onClick={() => setViewNominations(!viewNominations)}>
+            View Nominations
+          </button>
+        </>
+      )}
+      {viewNominations && <Nominations props={props} />}
       <SearchResults props={props} />
     </>
   )
