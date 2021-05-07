@@ -3,6 +3,7 @@ import './App.css'
 
 import Searchbar from './components/Searchbar/Searchbar'
 import SearchResults from './components/SearchResults/SearchResults'
+import Nominations from './components/Nominations/Nominations'
 
 function App() {
   const [searchTerm, setSearchTerm] = useState('')
@@ -25,6 +26,7 @@ function App() {
     <>
       <div>The Shoppies</div>
       <Searchbar props={props} />
+      <Nominations props={props} />
       <SearchResults props={props} />
     </>
   )
