@@ -29,9 +29,9 @@ const SearchResults = ({
     }
   }, [searchResults, setExistingNominations])
 
-  useEffect(() => {
-    console.log(existingNominations)
-  }, [existingNominations])
+  // useEffect(() => {
+  //   console.log(existingNominations)
+  // }, [existingNominations])
 
   const handleNomination = (e) => {
     const movie = e.target.parentNode.parentNode
@@ -51,7 +51,11 @@ const SearchResults = ({
       },
     })
       .then((res) => res.json())
-      .then((data) => console.log(data.data))
+      .then((data) => {
+        if (data.data) {
+          console.log((e.target.disabled = true))
+        }
+      })
       .catch((err) => console.log(err))
   }
 
