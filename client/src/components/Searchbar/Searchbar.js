@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import './Searchbar.css'
 
 const Searchbar = ({
   props: { searchTerm, setSearchTerm, setSearchResults, setCurrentPage },
@@ -27,8 +28,9 @@ const Searchbar = ({
     <form>
       <label htmlFor="movieSearch">Search for a movie:</label>
       <input
-        type="text"
+        type="search"
         name="movieSearch"
+        placeholder="Search..."
         onChange={(e) => {
           setSearchTerm(e.target.value.trim().replace(/ /g, '+'))
         }}
