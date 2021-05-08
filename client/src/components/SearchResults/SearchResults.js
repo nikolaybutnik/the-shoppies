@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import Collapsible from 'react-collapsible'
 import './SearchResults.css'
 
 import PageNavigation from '../PageNavigation/PageNavigation'
@@ -61,6 +62,25 @@ const SearchResults = ({
     return nominationsIDs.includes(id)
   }
 
+  const fetchPlot = (id) => {
+    if (document.getElementById(`movieplot+${id}`).innerHTML === '') {
+      fetch(`/getplot/${id}`, {
+        method: 'GET',
+        headers: {
+          Accept: 'application/json, text/plain, */*',
+          'Content-Type': 'application/json',
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data) {
+            document.getElementById(`movieplot+${id}`).innerHTML = data.data
+          }
+        })
+        .catch((err) => console.log(err))
+    }
+  }
+
   return (
     <div>
       {searchResults &&
@@ -84,6 +104,14 @@ const SearchResults = ({
               <div>
                 <h3>{`${item.Title}`}</h3>
                 <h5>{`Year released: ${item.Year}`}</h5>
+                <Collapsible
+                  trigger="View Plot"
+                  triggerWhenOpen="Collapse Plot"
+                  transitionTime={500}
+                  onOpen={() => fetchPlot(item.imdbID)}
+                >
+                  <p id={`movieplot+${item.imdbID}`}></p>
+                </Collapsible>
                 {existingNominations && !disableButton(item.imdbID) ? (
                   <button
                     onClick={(e) => {

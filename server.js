@@ -72,7 +72,7 @@ app.get('/allnominations', async (req, res) => {
   }
 })
 
-// Route which nadles the deletion of movie from DB
+// Route which handles the deletion of movie from DB
 app.delete('/removenomination/:id', async (req, res) => {
   try {
     const deletedItem = await Nomination.findOneAndDelete({
@@ -85,6 +85,20 @@ app.delete('/removenomination/:id', async (req, res) => {
   } catch (err) {
     res.status(500).json(err)
   }
+})
+
+// Route which handles fetching of movie plot
+app.get('/getplot/:id', (req, res) => {
+  fetch(
+    `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_API_KEY}&i=${req.params.id}&plot=full`
+  )
+    .then((res) => res.json())
+    .then((data) => {
+      res.send({ data: data.Plot })
+    })
+    .catch((err) => {
+      res.status(500).json(err)
+    })
 })
 
 // Send every other request to the React app
