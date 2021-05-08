@@ -12,5 +12,29 @@
 
 .searchForm input {
   width: 400px;
+  border: none;
+  outline: none;
+  text-align: center;
+  border-radius: 13px;
+  margin: 0 15px 15px 15px;
+  padding: 5px;
+  -webkit-box-shadow: 3px 3px 6px 6px #e4e4e4;
+          box-shadow: 3px 3px 6px 6px #e4e4e4;
+}
+
+.searchForm input::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.searchForm input:-ms-input-placeholder {
+  color: #999999;
+}
+
+.searchForm input::-ms-input-placeholder {
+  color: #999999;
+}
+
+.searchForm input::placeholder {
+  color: #999999;
 }
 /*# sourceMappingURL=Searchbar.css.map */

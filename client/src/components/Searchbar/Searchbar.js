@@ -19,7 +19,7 @@ const Searchbar = ({
     <form className="searchForm">
       <input
         type="search"
-        placeholder="Search for a movie..."
+        placeholder="Find your next mega hit..."
         onChange={(e) => {
           setSearchTerm(e.target.value.trim().replace(/ /g, '+'))
         }}
