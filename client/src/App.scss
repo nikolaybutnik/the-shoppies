@@ -3,7 +3,10 @@
 .imageContainer {
   text-align: center;
   .logo {
-    max-width: 50%;
-    height: auto;
+    max-width: 500px;
+    @media only screen and (max-width: 500px) {
+      max-width: 90%;
+      height: auto;
+    }
   }
 }

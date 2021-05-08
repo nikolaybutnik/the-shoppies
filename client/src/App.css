@@ -4,7 +4,13 @@
 }
 
 .imageContainer .logo {
-  max-width: 50%;
-  height: auto;
+  max-width: 500px;
+}
+
+@media only screen and (max-width: 500px) {
+  .imageContainer .logo {
+    max-width: 90%;
+    height: auto;
+  }
 }
 /*# sourceMappingURL=App.css.map */

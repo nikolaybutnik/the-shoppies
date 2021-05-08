@@ -16,12 +16,10 @@ const Searchbar = ({
   }, [searchTerm, setCurrentPage, setSearchResults])
 
   return (
-    <form>
-      <label htmlFor="movieSearch">Search for a movie:</label>
+    <form className="searchForm">
       <input
         type="search"
-        name="movieSearch"
-        placeholder="Search..."
+        placeholder="Search for a movie..."
         onChange={(e) => {
           setSearchTerm(e.target.value.trim().replace(/ /g, '+'))
         }}
