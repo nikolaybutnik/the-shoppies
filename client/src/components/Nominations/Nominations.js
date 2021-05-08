@@ -2,44 +2,21 @@ import React from 'react'
 import Collapsible from 'react-collapsible'
 import './Nominations.css'
 
+import { removeNomination, getPlot } from '../../utils/ServerCalls'
+
 const Nominations = ({
   props: { existingNominations, setExistingNominations },
 }) => {
   const handleDelete = (e) => {
     const [, deleteID] = e.target.parentNode.parentNode.id.split('+')
-    fetch(`/removenomination/${deleteID}`, {
-      method: 'DELETE',
-      headers: {
-        Accept: 'application/json, text/plain, */*',
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setExistingNominations(data.data.remaining)
-      })
-      .catch((err) => console.log(err))
+    removeNomination(deleteID, setExistingNominations)
   }
 
   const fetchPlot = (id) => {
     if (
       document.getElementById(`nominationplot+${id}`).innerHTML === 'Loading...'
     ) {
-      fetch(`/getplot/${id}`, {
-        method: 'GET',
-        headers: {
-          Accept: 'application/json, text/plain, */*',
-          'Content-Type': 'application/json',
-        },
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data) {
-            document.getElementById(`nominationplot+${id}`).innerHTML =
-              data.data
-          }
-        })
-        .catch((err) => console.log(err))
+      getPlot(id, 'nomination')
     }
   }
 

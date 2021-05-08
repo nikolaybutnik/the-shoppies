@@ -2,6 +2,8 @@ import React, { useEffect } from 'react'
 import Collapsible from 'react-collapsible'
 import './SearchResults.css'
 
+import { allNominations, newNomination, getPlot } from '../../utils/ServerCalls'
+
 import PageNavigation from '../PageNavigation/PageNavigation'
 
 const SearchResults = ({
@@ -17,44 +19,20 @@ const SearchResults = ({
 }) => {
   useEffect(() => {
     if (searchResults !== null && searchResults.Response !== 'False') {
-      fetch('/allnominations', {
-        method: 'GET',
-        headers: {
-          Accept: 'application/json, text/plain, */*',
-          'Content-Type': 'application/json',
-        },
-      })
-        .then((res) => res.json())
-        .then((data) => setExistingNominations(data.data))
-        .catch((err) => console.log(err))
+      allNominations(setExistingNominations)
     }
   }, [searchResults, setExistingNominations])
 
   const handleNomination = (e) => {
     const movie = e.target.parentNode.parentNode
-    const newNomination = {
+    const nomination = {
       poster: movie.children[0].src,
       title: movie.children[1].children[0].textContent,
       year: movie.children[1].children[1].textContent.slice(-4),
       imdbID: movie.id,
     }
 
-    fetch('/newnomination', {
-      method: 'POST',
-      body: JSON.stringify(newNomination),
-      headers: {
-        Accept: 'application/json, text/plain, */*',
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.data) {
-          e.target.disabled = true
-          setExistingNominations(data.data.all)
-        }
-      })
-      .catch((err) => console.log(err))
+    newNomination(e, nomination, setExistingNominations)
   }
 
   const disableButton = (id) => {
@@ -64,20 +42,7 @@ const SearchResults = ({
 
   const fetchPlot = (id) => {
     if (document.getElementById(`movieplot+${id}`).innerHTML === 'Loading...') {
-      fetch(`/getplot/${id}`, {
-        method: 'GET',
-        headers: {
-          Accept: 'application/json, text/plain, */*',
-          'Content-Type': 'application/json',
-        },
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data) {
-            document.getElementById(`movieplot+${id}`).innerHTML = data.data
-          }
-        })
-        .catch((err) => console.log(err))
+      getPlot(id, 'movie')
     }
   }
 

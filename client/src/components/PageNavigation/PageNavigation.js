@@ -1,6 +1,8 @@
 import React from 'react'
 import './PageNavigation.css'
 
+import { getMovies } from '../../utils/ServerCalls'
+
 const PageNavigation = ({
   props: {
     searchResults,
@@ -11,18 +13,7 @@ const PageNavigation = ({
   },
 }) => {
   const fetchPage = (page) => {
-    fetch(`/getmovies/${searchTerm}/${page}`, {
-      method: 'GET',
-      headers: {
-        Accept: 'application/json, text/plain, */*',
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setSearchResults(data.data)
-      })
-      .catch((err) => console.log(err))
+    getMovies(searchTerm, page, setSearchResults)
   }
 
   return (

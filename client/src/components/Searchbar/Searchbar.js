@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import './Searchbar.css'
 
+import { getMovies } from '../../utils/ServerCalls'
+
 const Searchbar = ({
   props: { searchTerm, setSearchTerm, setSearchResults, setCurrentPage },
 }) => {
@@ -9,18 +11,7 @@ const Searchbar = ({
       setSearchResults(null)
     } else {
       setCurrentPage(1)
-      fetch(`/getmovies/${searchTerm}/1`, {
-        method: 'GET',
-        headers: {
-          Accept: 'application/json, text/plain, */*',
-          'Content-Type': 'application/json',
-        },
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          setSearchResults(data.data)
-        })
-        .catch((err) => console.log(err))
+      getMovies(searchTerm, 1, setSearchResults)
     }
   }, [searchTerm, setCurrentPage, setSearchResults])
 
