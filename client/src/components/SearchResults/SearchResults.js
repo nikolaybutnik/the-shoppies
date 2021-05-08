@@ -63,7 +63,7 @@ const SearchResults = ({
   }
 
   const fetchPlot = (id) => {
-    if (document.getElementById(`movieplot+${id}`).innerHTML === '') {
+    if (document.getElementById(`movieplot+${id}`).innerHTML === 'Loading...') {
       fetch(`/getplot/${id}`, {
         method: 'GET',
         headers: {
@@ -107,10 +107,9 @@ const SearchResults = ({
                 <Collapsible
                   trigger="View Plot"
                   triggerWhenOpen="Collapse Plot"
-                  transitionTime={500}
                   onOpen={() => fetchPlot(item.imdbID)}
                 >
-                  <p id={`movieplot+${item.imdbID}`}></p>
+                  <p id={`movieplot+${item.imdbID}`}>Loading...</p>
                 </Collapsible>
                 {existingNominations && !disableButton(item.imdbID) ? (
                   <button
