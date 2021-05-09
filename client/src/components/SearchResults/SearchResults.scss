@@ -3,11 +3,11 @@
   .searchResult {
     font-family: 'PT Sans', sans-serif;
     display: flex;
-    margin: 5px auto 5px auto;
-    border: 2px solid grey;
+    margin: 10px auto 10px auto;
     max-width: 500px;
     padding: 5px;
     background-color: rgb(197, 228, 255);
+    box-shadow: 1px 1px 3px 3px #868bd3;
     .resultPoster {
       width: 125px;
       height: 100%;
@@ -17,13 +17,20 @@
     .resultContent {
       width: 100%;
       .Collapsible {
-        background-color: rgb(233, 233, 233);
         margin-bottom: 10px;
         &:hover {
           cursor: pointer;
         }
         .Collapsible__trigger {
           display: block;
+          background-color: rgb(189, 189, 189);
+          color: rgb(54, 54, 54);
+          padding: 5px 0 5px 10px;
+          font-weight: bold;
+        }
+        .Collapsible__contentOuter {
+          border: 1px solid rgb(189, 189, 189);
+          background-color: rgb(241, 241, 241);
         }
       }
       .plot {

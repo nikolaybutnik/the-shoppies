@@ -7,11 +7,12 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 5px auto 5px auto;
-  border: 2px solid grey;
+  margin: 10px auto 10px auto;
   max-width: 500px;
   padding: 5px;
   background-color: #c5e4ff;
+  -webkit-box-shadow: 1px 1px 3px 3px #868bd3;
+          box-shadow: 1px 1px 3px 3px #868bd3;
 }
 
 .searchResults .searchResult .resultPoster {
@@ -26,7 +27,6 @@
 }
 
 .searchResults .searchResult .resultContent .Collapsible {
-  background-color: #e9e9e9;
   margin-bottom: 10px;
 }
 
@@ -36,6 +36,15 @@
 
 .searchResults .searchResult .resultContent .Collapsible .Collapsible__trigger {
   display: block;
+  background-color: #bdbdbd;
+  color: #363636;
+  padding: 5px 0 5px 10px;
+  font-weight: bold;
+}
+
+.searchResults .searchResult .resultContent .Collapsible .Collapsible__contentOuter {
+  border: 1px solid #bdbdbd;
+  background-color: #f1f1f1;
 }
 
 .searchResults .searchResult .resultContent .plot {
