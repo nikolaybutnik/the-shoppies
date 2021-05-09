@@ -39,7 +39,13 @@ const SearchResults = ({
 
   const disableButton = (id) => {
     const nominationsIDs = existingNominations.map((item) => item.imdbID)
-    return nominationsIDs.includes(id)
+    if (nominationsIDs.includes(id)) {
+      return { status: 'Already nominated', disabled: true }
+    } else if (existingNominations.length === 5) {
+      return { status: 'List full', disabled: true }
+    } else {
+      return false
+    }
   }
 
   const fetchPlot = (id) => {
@@ -80,7 +86,7 @@ const SearchResults = ({
                     Loading...
                   </p>
                 </Collapsible>
-                {existingNominations && !disableButton(item.imdbID) ? (
+                {existingNominations && !disableButton(item.imdbID).disabled ? (
                   <div style={{ display: 'flex' }}>
                     <IconContext.Provider
                       value={{ color: 'goldenrod', size: '25px' }}
@@ -104,7 +110,10 @@ const SearchResults = ({
                       <FaAward />
                     </IconContext.Provider>
                     <button disabled className="nominateButtonDisabled">
-                      Already Nominated!
+                      {disableButton(item.imdbID).status ===
+                        'Already nominated' && 'Already Nominated!'}
+                      {disableButton(item.imdbID).status === 'List full' &&
+                        'Nomination Limit Reached!'}
                     </button>
                   </div>
                 )}
