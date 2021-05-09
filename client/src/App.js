@@ -63,7 +63,7 @@ function App() {
         </div>
       ) : (
         <div className="viewNominations">
-          <div>{`${existingNominations.length} have been nominated, keep going!`}</div>
+          <div>{`${existingNominations.length} movies have been nominated, keep going!`}</div>
           <button onClick={() => setViewNominations(!viewNominations)}>
             <IconContext.Provider value={{ size: '15px' }}>
               <BiDownArrow className="arrowDown" />
