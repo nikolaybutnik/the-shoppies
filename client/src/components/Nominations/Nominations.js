@@ -36,7 +36,7 @@ const Nominations = ({
                   alt={item.title}
                 />
               </div>
-              <div className="nominationTitle">{`${item.title}, ${item.year}`}</div>
+              <div className="nominationTitle">{`${item.title} (${item.year})`}</div>
             </div>
           )
         })}
