@@ -5,6 +5,9 @@ import Searchbar from './components/Searchbar/Searchbar'
 import SearchResults from './components/SearchResults/SearchResults'
 import Nominations from './components/Nominations/Nominations'
 
+import { IconContext } from 'react-icons'
+import { BiDownArrow } from 'react-icons/bi'
+
 function App() {
   const [searchTerm, setSearchTerm] = useState('')
   const [searchResults, setSearchResults] = useState(null)
@@ -45,19 +48,32 @@ function App() {
       </div>
       <Searchbar props={props} />
       {existingNominations.length === 5 ? (
-        <>
-          <div>{`You have nominated 5 movies!`}</div>
+        <div className="viewNominations">
+          <div>{`All 5 movies have been nominated!`}</div>
+
           <button onClick={() => setViewNominations(!viewNominations)}>
+            <IconContext.Provider value={{ size: '15px' }}>
+              <BiDownArrow className="arrowDown" />
+            </IconContext.Provider>
             View Nominations
+            <IconContext.Provider value={{ size: '15px' }}>
+              <BiDownArrow className="arrowDown" />
+            </IconContext.Provider>
           </button>
-        </>
+        </div>
       ) : (
-        <>
-          <div>{`You have nominated ${existingNominations.length} movies, keep going!`}</div>
+        <div className="viewNominations">
+          <div>{`${existingNominations.length} have been nominated, keep going!`}</div>
           <button onClick={() => setViewNominations(!viewNominations)}>
+            <IconContext.Provider value={{ size: '15px' }}>
+              <BiDownArrow className="arrowDown" />
+            </IconContext.Provider>
             View Nominations
+            <IconContext.Provider value={{ size: '15px' }}>
+              <BiDownArrow className="arrowDown" />
+            </IconContext.Provider>
           </button>
-        </>
+        </div>
       )}
       {viewNominations && <Nominations props={props} />}
       <SearchResults props={props} />
