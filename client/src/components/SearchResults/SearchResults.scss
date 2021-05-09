@@ -38,6 +38,22 @@
         font-style: italic;
         padding: 5px;
       }
+      .nominateButton,
+      .nominateButtonDisabled {
+        border: none;
+        background: none;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        font-size: large;
+      }
+      .nominateButton {
+        color: rgb(54, 54, 54);
+        &:hover {
+          cursor: pointer;
+          color: goldenrod;
+        }
+      }
     }
   }
 }

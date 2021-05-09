@@ -52,4 +52,27 @@
   font-style: italic;
   padding: 5px;
 }
+
+.searchResults .searchResult .resultContent .nominateButton,
+.searchResults .searchResult .resultContent .nominateButtonDisabled {
+  border: none;
+  background: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: bold;
+  font-size: large;
+}
+
+.searchResults .searchResult .resultContent .nominateButton {
+  color: #363636;
+}
+
+.searchResults .searchResult .resultContent .nominateButton:hover {
+  cursor: pointer;
+  color: goldenrod;
+}
 /*# sourceMappingURL=SearchResults.css.map */

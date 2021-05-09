@@ -3,8 +3,10 @@ import Collapsible from 'react-collapsible'
 import './SearchResults.css'
 
 import { allNominations, newNomination, getPlot } from '../../utils/ServerCalls'
-
 import PageNavigation from '../PageNavigation/PageNavigation'
+
+import { IconContext } from 'react-icons'
+import { FaAward } from 'react-icons/fa'
 
 const SearchResults = ({
   props: {
@@ -24,7 +26,7 @@ const SearchResults = ({
   }, [searchResults, setExistingNominations])
 
   const handleNomination = (e) => {
-    const movie = e.target.parentNode.parentNode
+    const movie = e.target.parentNode.parentNode.parentNode
     const nomination = {
       poster: movie.children[0].src,
       title: movie.children[1].children[0].textContent,
@@ -79,15 +81,32 @@ const SearchResults = ({
                   </p>
                 </Collapsible>
                 {existingNominations && !disableButton(item.imdbID) ? (
-                  <button
-                    onClick={(e) => {
-                      handleNomination(e)
-                    }}
-                  >
-                    Nominate
-                  </button>
+                  <div style={{ display: 'flex' }}>
+                    <IconContext.Provider
+                      value={{ color: 'goldenrod', size: '25px' }}
+                    >
+                      <FaAward />
+                    </IconContext.Provider>
+                    <button
+                      className="nominateButton"
+                      onClick={(e) => {
+                        handleNomination(e)
+                      }}
+                    >
+                      Nominate!
+                    </button>
+                  </div>
                 ) : (
-                  <button disabled>Nominate</button>
+                  <div style={{ display: 'flex' }}>
+                    <IconContext.Provider
+                      value={{ color: '#ccc', size: '25px' }}
+                    >
+                      <FaAward />
+                    </IconContext.Provider>
+                    <button disabled className="nominateButtonDisabled">
+                      Already Nominated!
+                    </button>
+                  </div>
                 )}
               </div>
             </div>
