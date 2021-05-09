@@ -4,11 +4,14 @@ import './Nominations.css'
 
 import { removeNomination, getPlot } from '../../utils/ServerCalls'
 
+import { IconContext } from 'react-icons'
+import { TiDelete } from 'react-icons/ti'
+
 const Nominations = ({
   props: { existingNominations, setExistingNominations },
 }) => {
   const handleDelete = (e) => {
-    const [, deleteID] = e.target.parentNode.id.split('+')
+    const [, deleteID] = e.currentTarget.parentNode.id.split('+')
     removeNomination(deleteID, setExistingNominations)
   }
 
@@ -30,6 +33,11 @@ const Nominations = ({
               key={item.imdbID}
               className="nomination"
             >
+              <button className="deleteButton" onClick={(e) => handleDelete(e)}>
+                <IconContext.Provider value={{ color: 'red', size: '25px' }}>
+                  <TiDelete />
+                </IconContext.Provider>
+              </button>
               <div className="posterContainer">
                 <img
                   className="nominationPoster"
@@ -45,7 +53,6 @@ const Nominations = ({
                 >
                   <p id={`nominationplot+${item.imdbID}`}>Loading...</p>
                 </Collapsible> */}
-              <button onClick={(e) => handleDelete(e)}>Remove</button>
             </div>
           )
         })}
