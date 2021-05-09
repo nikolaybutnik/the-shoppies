@@ -1,13 +1,36 @@
-.nomination {
+.allNominations {
   display: flex;
-  margin: 5px;
-  border: 2px solid grey;
-  max-width: 500px;
-  padding: 5px;
-  background-color: aliceblue;
-  .nominationPoster {
-    width: 125px;
-    height: 100%;
-    margin: auto 10px auto 0px;
+  justify-content: center;
+  padding: 0 15px 0 15px;
+  @media only screen and (max-width: 750px) {
+    flex-wrap: wrap;
+  }
+  .nomination {
+    text-align: center;
+    margin: 5px;
+    border: none;
+    width: 200px;
+    padding: 5px;
+    box-shadow: 1px 1px 3px 3px #96c045;
+    background-color: rgb(229, 255, 204);
+    @media only screen and (max-width: 750px) {
+      width: 150px;
+    }
+    .nominationTitle {
+      font-family: 'PT Sans', sans-serif;
+      font-weight: bold;
+      margin: 5px 0 5px 0;
+    }
+    .posterContainer {
+      display: flex;
+      height: 185px;
+      align-items: center;
+      justify-content: center;
+      .nominationPoster {
+        width: 125px;
+        height: auto;
+        border: 5px outset #96c045;
+      }
+    }
   }
 }
