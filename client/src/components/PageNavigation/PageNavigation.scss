@@ -1,8 +1,10 @@
 .pageNumberList {
   display: flex;
+  // align-items: center;
+  // justify-content: center;
   max-width: 500px;
   flex-wrap: wrap;
-  margin-bottom: 20px;
+  margin: 0 auto 20px auto;
   .active {
     color: black;
     font-weight: bold;
