@@ -1,0 +1,13 @@
+.footerContainer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(229, 255, 204);
+  text-align: center;
+  border-top: 2px solid #96c045;
+  h3 {
+    margin: 10px 0 10px 0;
+    font-family: 'PT Sans', sans-serif;
+  }
+}

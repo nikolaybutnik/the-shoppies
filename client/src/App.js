@@ -4,6 +4,7 @@ import './App.css'
 import Searchbar from './components/Searchbar/Searchbar'
 import SearchResults from './components/SearchResults/SearchResults'
 import Nominations from './components/Nominations/Nominations'
+import Footer from './components/Footer/Footer'
 
 import { IconContext } from 'react-icons'
 import { BiDownArrow } from 'react-icons/bi'
@@ -49,8 +50,6 @@ function App() {
       <Searchbar props={props} />
       {existingNominations.length === 5 ? (
         <div className="viewNominations">
-          <div>{`All 5 movies have been nominated!`}</div>
-
           <button onClick={() => setViewNominations(!viewNominations)}>
             <IconContext.Provider value={{ size: '15px' }}>
               <BiDownArrow className="arrowDown" />
@@ -63,7 +62,6 @@ function App() {
         </div>
       ) : (
         <div className="viewNominations">
-          <div>{`${existingNominations.length} movies have been nominated, keep going!`}</div>
           <button onClick={() => setViewNominations(!viewNominations)}>
             <IconContext.Provider value={{ size: '15px' }}>
               <BiDownArrow className="arrowDown" />
@@ -77,6 +75,7 @@ function App() {
       )}
       {viewNominations && <Nominations props={props} />}
       <SearchResults props={props} />
+      {existingNominations.length === 5 && <Footer props={props} />}
     </>
   )
 }

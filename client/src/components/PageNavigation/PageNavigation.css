@@ -5,7 +5,7 @@
   max-width: 500px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin: 0 auto 20px auto;
+  margin: 0 auto 50px auto;
 }
 
 .pageNumberList .active {
