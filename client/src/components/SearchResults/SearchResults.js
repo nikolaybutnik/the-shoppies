@@ -47,7 +47,7 @@ const SearchResults = ({
   }
 
   return (
-    <div>
+    <div className="searchResults">
       {searchResults &&
         searchResults.Response !== 'False' &&
         searchResults.Search.map((item) => {
@@ -66,7 +66,7 @@ const SearchResults = ({
                 }
                 alt={item.Title}
               />
-              <div>
+              <div className="resultContent">
                 <h3>{`${item.Title}`}</h3>
                 <h5>{`Year released: ${item.Year}`}</h5>
                 <Collapsible
@@ -74,7 +74,9 @@ const SearchResults = ({
                   triggerWhenOpen="Collapse Plot"
                   onOpen={() => fetchPlot(item.imdbID)}
                 >
-                  <p id={`movieplot+${item.imdbID}`}>Loading...</p>
+                  <p id={`movieplot+${item.imdbID}`} className="plot">
+                    Loading...
+                  </p>
                 </Collapsible>
                 {existingNominations && !disableButton(item.imdbID) ? (
                   <button
