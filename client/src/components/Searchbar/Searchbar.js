@@ -16,7 +16,7 @@ const Searchbar = ({
   }, [searchTerm, setCurrentPage, setSearchResults])
 
   return (
-    <form className="searchForm">
+    <form className="searchForm" onSubmit={(e) => e.preventDefault()}>
       <input
         type="search"
         placeholder="Find your next mega hit..."
