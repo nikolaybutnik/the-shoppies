@@ -1,8 +1,7 @@
 import React from 'react'
-import Collapsible from 'react-collapsible'
 import './Nominations.css'
 
-import { removeNomination, getPlot } from '../../utils/ServerCalls'
+import { removeNomination } from '../../utils/ServerCalls'
 
 import { IconContext } from 'react-icons'
 import { TiDelete } from 'react-icons/ti'
@@ -14,14 +13,6 @@ const Nominations = ({
     const [, deleteID] = e.currentTarget.parentNode.id.split('+')
     removeNomination(deleteID, setExistingNominations)
   }
-
-  // const fetchPlot = (id) => {
-  //   if (
-  //     document.getElementById(`nominationplot+${id}`).innerHTML === 'Loading...'
-  //   ) {
-  //     getPlot(id, 'nomination')
-  //   }
-  // }
 
   return (
     <div className="allNominations">
@@ -46,13 +37,6 @@ const Nominations = ({
                 />
               </div>
               <div className="nominationTitle">{`${item.title}, ${item.year}`}</div>
-              {/* <Collapsible
-                  trigger="View Plot"
-                  triggerWhenOpen="Collapse Plot"
-                  onOpen={() => fetchPlot(item.imdbID)}
-                >
-                  <p id={`nominationplot+${item.imdbID}`}>Loading...</p>
-                </Collapsible> */}
             </div>
           )
         })}
