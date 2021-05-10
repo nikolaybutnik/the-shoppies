@@ -1,29 +1,31 @@
-# Create React Express App
+<br />
+<p align="center">
+  <h3 align="center">The Shoppies</h3>
+  <p align="center">
+    Movie awards for entrepreneurs
+    <br />
+    <a href="https://github.com/nikolaybutnik/the-shoppies"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://nb-theshoppies.herokuapp.com/">View Demo</a>
+    ·
+    <a href="https://github.com/nikolaybutnik/the-shoppies/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/nikolaybutnik/the-shoppies/issues">Request Feature</a>
+</p>
 
-## About This Boilerplate
+## About The Project
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
+![The Shoppies Screenshot](https://github.com/nikolaybutnik/the-shoppies/blob/master/client/public/the-shoppies-screenshot.png?raw=true)
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
+Shopify has branched into movie award shows and needs a platform for managing movie nominations. The Shoppies is such platform! The Shoppies allows browsing thousands of movies, and nominating the best of the best. Nominate up to five movies and roll out the red carpet!
 
-## Starting the app locally
+### Built With
 
-Start by installing front and backend dependencies. While in this directory, run the following command:
+The following technologies and libraries were used in the creation of STAR Academy:
 
-```
-npm install
-```
-
-This should install node modules within the server and the client folder.
-
-After both installations complete, run the following command in your terminal:
-
-```
-npm start
-```
-
-Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
-
-## Deployment (Heroku)
-
-To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
+- [React](https://reactjs.org/)
+- [Sass](https://sass-lang.com/)
+- [MongoDB](https://www.mongodb.com/)
+- [React Icons](https://react-icons.github.io/react-icons/)
+- [OMDb API](https://www.omdbapi.com/)
