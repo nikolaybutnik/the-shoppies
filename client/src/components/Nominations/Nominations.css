@@ -6,12 +6,19 @@
       -ms-flex-pack: center;
           justify-content: center;
   padding: 0 15px 0 15px;
+  margin: 0 15px 0 15px;
 }
 
 @media only screen and (max-width: 750px) {
   .allNominations {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+  }
+}
+
+@media only screen and (max-width: 530px) {
+  .allNominations {
+    margin: 0;
   }
 }
 
@@ -33,6 +40,16 @@
   }
 }
 
+@media only screen and (max-width: 530px) {
+  .allNominations .nomination {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    margin: 5px 0 5px 0;
+  }
+}
+
 .allNominations .nomination .posterContainer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -47,16 +64,44 @@
   margin-top: 20px;
 }
 
+@media only screen and (max-width: 530px) {
+  .allNominations .nomination .posterContainer {
+    margin: 0;
+  }
+}
+
 .allNominations .nomination .posterContainer .nominationPoster {
   width: 125px;
   height: auto;
   border: 5px outset #96c045;
 }
 
+@media only screen and (max-width: 530px) {
+  .allNominations .nomination .posterContainer .nominationPoster {
+    margin: auto 0 auto 0;
+  }
+}
+
 .allNominations .nomination .nominationTitle {
   font-family: 'PT Sans', sans-serif;
   font-weight: bold;
   margin: 5px 0 5px 0;
+}
+
+@media only screen and (max-width: 530px) {
+  .allNominations .nomination .nominationTitle {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0 25px 0 10px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    font-size: 20px;
+  }
 }
 
 .allNominations .nomination .deleteButton {
