@@ -9,7 +9,14 @@
   }
   .pageNumber {
     color: grey;
-    margin: 5px;
+    margin: 1px;
     cursor: pointer;
+    padding: 4px;
+    user-select: none;
+    &:hover {
+      background-color: rgb(189, 189, 189);
+      color: white;
+      border-radius: 10px;
+    }
   }
 }

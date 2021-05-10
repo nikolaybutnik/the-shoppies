@@ -15,7 +15,18 @@
 
 .pageNumberList .pageNumber {
   color: grey;
-  margin: 5px;
+  margin: 1px;
   cursor: pointer;
+  padding: 4px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.pageNumberList .pageNumber:hover {
+  background-color: #bdbdbd;
+  color: white;
+  border-radius: 10px;
 }
 /*# sourceMappingURL=PageNavigation.css.map */
