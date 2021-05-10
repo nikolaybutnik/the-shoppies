@@ -22,7 +22,7 @@ Shopify has branched into movie award shows and needs a platform for managing mo
 
 ### Built With
 
-The following technologies and libraries were used in the creation of STAR Academy:
+The following technologies and libraries were used in the creation of The Shoppies:
 
 - [React](https://reactjs.org/)
 - [Sass](https://sass-lang.com/)
