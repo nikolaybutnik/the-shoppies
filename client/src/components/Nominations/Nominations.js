@@ -17,41 +17,49 @@ const Nominations = ({
   return (
     <>
       {existingNominations.length === 0 && (
-        <div className="noNominations">
-          <h3>Nothing here yet!</h3>
+        <div className="noNominations nominationsWrapper">
+          <div className="bannerContainer">
+            <h1>~ Hall of Fame ~</h1>
+            <h3>Nothing here yet!</h3>
+          </div>
         </div>
       )}
       {existingNominations.length > 0 && (
-        <div className="allNominations">
-          {existingNominations &&
-            existingNominations.map((item) => {
-              return (
-                <div
-                  id={`nomination+${item.imdbID}`}
-                  key={item.imdbID}
-                  className="nomination"
-                >
-                  <button
-                    className="deleteButton"
-                    onClick={(e) => handleDelete(e)}
+        <div className="nominationsWrapper">
+          <div className="bannerContainer">
+            <h1>~ Hall of Fame ~</h1>
+          </div>
+          <div className="allNominations">
+            {existingNominations &&
+              existingNominations.map((item) => {
+                return (
+                  <div
+                    id={`nomination+${item.imdbID}`}
+                    key={item.imdbID}
+                    className="nomination"
                   >
-                    <IconContext.Provider
-                      value={{ color: 'red', size: '25px' }}
+                    <button
+                      className="deleteButton"
+                      onClick={(e) => handleDelete(e)}
                     >
-                      <TiDelete />
-                    </IconContext.Provider>
-                  </button>
-                  <div className="posterContainer">
-                    <img
-                      className="nominationPoster"
-                      src={item.poster}
-                      alt={item.title}
-                    />
+                      <IconContext.Provider
+                        value={{ color: 'red', size: '25px' }}
+                      >
+                        <TiDelete />
+                      </IconContext.Provider>
+                    </button>
+                    <div className="posterContainer">
+                      <img
+                        className="nominationPoster"
+                        src={item.poster}
+                        alt={item.title}
+                      />
+                    </div>
+                    <div className="nominationTitle">{`${item.title} (${item.year})`}</div>
                   </div>
-                  <div className="nominationTitle">{`${item.title} (${item.year})`}</div>
-                </div>
-              )
-            })}
+                )
+              })}
+          </div>
         </div>
       )}
     </>

@@ -1,14 +1,31 @@
-.noNominations {
-  background-color: #e5ffcc;
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+.nominationsWrapper {
+  border: 5px outset #c05c34;
+  background-color: #ffe0d4;
 }
 
-.noNominations h3 {
+.nominationsWrapper .noNominations h3 {
   padding: 25px;
   margin: 5px 0 5px 0;
 }
 
-.allNominations {
+.nominationsWrapper .bannerContainer {
+  text-align: center;
+  background-color: #ffe0d4;
+}
+
+.nominationsWrapper .bannerContainer h1 {
+  font-family: 'Lobster', cursive;
+  color: #c05c34;
+  margin: 10px 0 10px 0;
+  font-size: 40px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.nominationsWrapper .allNominations {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -16,23 +33,24 @@
       -ms-flex-pack: center;
           justify-content: center;
   padding: 0 15px 0 15px;
-  margin: 0 15px 0 15px;
+  background-color: #ffe0d4;
+  padding-bottom: 20px;
 }
 
 @media only screen and (max-width: 750px) {
-  .allNominations {
+  .nominationsWrapper .allNominations {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
 }
 
-@media only screen and (max-width: 530px) {
-  .allNominations {
+@media only screen and (max-width: 537px) {
+  .nominationsWrapper .allNominations {
     margin: 0;
   }
 }
 
-.allNominations .nomination {
+.nominationsWrapper .allNominations .nomination {
   position: relative;
   text-align: center;
   margin: 5px;
@@ -45,13 +63,13 @@
 }
 
 @media only screen and (max-width: 750px) {
-  .allNominations .nomination {
+  .nominationsWrapper .allNominations .nomination {
     width: 150px;
   }
 }
 
-@media only screen and (max-width: 530px) {
-  .allNominations .nomination {
+@media only screen and (max-width: 537px) {
+  .nominationsWrapper .allNominations .nomination {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -60,7 +78,7 @@
   }
 }
 
-.allNominations .nomination .posterContainer {
+.nominationsWrapper .allNominations .nomination .posterContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -74,32 +92,32 @@
   margin-top: 20px;
 }
 
-@media only screen and (max-width: 530px) {
-  .allNominations .nomination .posterContainer {
+@media only screen and (max-width: 537px) {
+  .nominationsWrapper .allNominations .nomination .posterContainer {
     margin: 0;
   }
 }
 
-.allNominations .nomination .posterContainer .nominationPoster {
+.nominationsWrapper .allNominations .nomination .posterContainer .nominationPoster {
   width: 125px;
   height: auto;
   border: 5px outset #96c045;
 }
 
-@media only screen and (max-width: 530px) {
-  .allNominations .nomination .posterContainer .nominationPoster {
+@media only screen and (max-width: 537px) {
+  .nominationsWrapper .allNominations .nomination .posterContainer .nominationPoster {
     margin: auto 0 auto 0;
   }
 }
 
-.allNominations .nomination .nominationTitle {
+.nominationsWrapper .allNominations .nomination .nominationTitle {
   font-family: 'PT Sans', sans-serif;
   font-weight: bold;
   margin: 5px 0 5px 0;
 }
 
-@media only screen and (max-width: 530px) {
-  .allNominations .nomination .nominationTitle {
+@media only screen and (max-width: 537px) {
+  .nominationsWrapper .allNominations .nomination .nominationTitle {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -114,7 +132,7 @@
   }
 }
 
-.allNominations .nomination .deleteButton {
+.nominationsWrapper .allNominations .nomination .deleteButton {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -135,7 +153,7 @@
   transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
 }
 
-.allNominations .nomination .deleteButton:hover {
+.nominationsWrapper .allNominations .nomination .deleteButton:hover {
   cursor: pointer;
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);

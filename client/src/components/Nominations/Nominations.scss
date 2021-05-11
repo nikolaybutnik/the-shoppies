@@ -1,83 +1,100 @@
-.noNominations {
-  background-color: rgb(229, 255, 204);
-  text-align: center;
-  h3 {
-    padding: 25px;
-    margin: 5px 0 5px 0;
-  }
-}
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
-.allNominations {
-  display: flex;
-  justify-content: center;
-  padding: 0 15px 0 15px;
-  margin: 0 15px 0 15px;
-  @media only screen and (max-width: 750px) {
-    flex-wrap: wrap;
+.nominationsWrapper {
+  border: 5px outset #c05c34;
+  background-color: #ffe0d4;
+  .noNominations {
+    h3 {
+      padding: 25px;
+      margin: 5px 0 5px 0;
+    }
   }
-  @media only screen and (max-width: 530px) {
-    margin: 0;
-  }
-  .nomination {
-    position: relative;
+
+  .bannerContainer {
     text-align: center;
-    margin: 5px;
-    border: none;
-    width: 200px;
-    padding: 5px;
-    box-shadow: 1px 1px 3px 3px #96c045;
-    background-color: rgb(229, 255, 204);
+    background-color: #ffe0d4;
+    h1 {
+      font-family: 'Lobster', cursive;
+      color: #c05c34;
+      margin: 10px 0 10px 0;
+      font-size: 40px;
+      user-select: none;
+    }
+  }
+
+  .allNominations {
+    display: flex;
+    justify-content: center;
+    padding: 0 15px 0 15px;
+    background-color: #ffe0d4;
+    padding-bottom: 20px;
     @media only screen and (max-width: 750px) {
-      width: 150px;
+      flex-wrap: wrap;
     }
-    @media only screen and (max-width: 530px) {
-      display: flex;
-      width: 100%;
-      margin: 5px 0 5px 0;
+    @media only screen and (max-width: 537px) {
+      margin: 0;
     }
-    .posterContainer {
-      display: flex;
-      height: 185px;
-      align-items: center;
-      justify-content: center;
-      margin-top: 20px;
-      @media only screen and (max-width: 530px) {
-        margin: 0;
+    .nomination {
+      position: relative;
+      text-align: center;
+      margin: 5px;
+      border: none;
+      width: 200px;
+      padding: 5px;
+      box-shadow: 1px 1px 3px 3px #96c045;
+      background-color: rgb(229, 255, 204);
+      @media only screen and (max-width: 750px) {
+        width: 150px;
       }
-      .nominationPoster {
-        width: 125px;
-        height: auto;
-        border: 5px outset #96c045;
-        @media only screen and (max-width: 530px) {
-          margin: auto 0 auto 0;
-        }
-      }
-    }
-    .nominationTitle {
-      font-family: 'PT Sans', sans-serif;
-      font-weight: bold;
-      margin: 5px 0 5px 0;
-      @media only screen and (max-width: 530px) {
+      @media only screen and (max-width: 537px) {
         display: flex;
-        padding: 0 25px 0 10px;
+        width: 100%;
+        margin: 5px 0 5px 0;
+      }
+      .posterContainer {
+        display: flex;
+        height: 185px;
         align-items: center;
         justify-content: center;
-        font-size: 20px;
+        margin-top: 20px;
+        @media only screen and (max-width: 537px) {
+          margin: 0;
+        }
+        .nominationPoster {
+          width: 125px;
+          height: auto;
+          border: 5px outset #96c045;
+          @media only screen and (max-width: 537px) {
+            margin: auto 0 auto 0;
+          }
+        }
       }
-    }
-    .deleteButton {
-      display: flex;
-      position: absolute;
-      align-items: center;
-      justify-content: center;
-      top: 0;
-      right: 0;
-      background: none;
-      border: none;
-      transition: transform 0.2s ease-in-out;
-      &:hover {
-        cursor: pointer;
-        transform: rotate(90deg);
+      .nominationTitle {
+        font-family: 'PT Sans', sans-serif;
+        font-weight: bold;
+        margin: 5px 0 5px 0;
+        @media only screen and (max-width: 537px) {
+          display: flex;
+          padding: 0 25px 0 10px;
+          align-items: center;
+          justify-content: center;
+          font-size: 20px;
+        }
+      }
+      .deleteButton {
+        display: flex;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        right: 0;
+        background: none;
+        border: none;
+        transition: transform 0.2s ease-in-out;
+        &:hover {
+          cursor: pointer;
+          transform: rotate(90deg);
+        }
       }
     }
   }
