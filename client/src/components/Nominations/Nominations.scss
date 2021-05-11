@@ -1,3 +1,12 @@
+.noNominations {
+  background-color: rgb(229, 255, 204);
+  text-align: center;
+  h3 {
+    padding: 25px;
+    margin: 5px 0 5px 0;
+  }
+}
+
 .allNominations {
   display: flex;
   justify-content: center;
