@@ -16,7 +16,7 @@
 
 ## About The Project
 
-![The Shoppies Screenshot](https://github.com/nikolaybutnik/the-shoppies/blob/master/client/public/the-shoppies-screenshot.png?raw=true)
+![The Shoppies Screenshot](https://github.com/nikolaybutnik/the-shoppies/blob/master/client/public/the-shoppies-screenshot-v2.png?raw=true)
 
 Shopify has branched into movie award shows and needs a platform for managing movie nominations. The Shoppies is such platform! The Shoppies allows browsing thousands of movies, and nominating the best of the best. Nominate up to five movies and roll out the red carpet!
 
