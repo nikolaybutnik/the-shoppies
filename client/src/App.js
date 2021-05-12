@@ -45,7 +45,7 @@ function App() {
   return (
     <>
       <div className="imageContainer">
-        <img src="the-shoppies.png" alt="Logo" className="logo" />
+        <img src="the-shoppies-v2.png" alt="Logo" className="logo" />
       </div>
       <Searchbar props={props} />
       {existingNominations.length === 5 ? (
