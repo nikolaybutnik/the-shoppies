@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 .nominationsWrapper {
-  border: 5px outset #c05c34;
-  background-color: #ffe0d4;
+  border: 5px outset #588bae;
+  background-color: #d4f0f3;
 }
 
 .nominationsWrapper .noNominations h3 {
@@ -11,12 +11,12 @@
 
 .nominationsWrapper .bannerContainer {
   text-align: center;
-  background-color: #ffe0d4;
+  background-color: #d4f0f3;
 }
 
 .nominationsWrapper .bannerContainer h1 {
   font-family: 'Lobster', cursive;
-  color: #c05c34;
+  color: #588bae;
   margin: 10px 0 10px 0;
   font-size: 40px;
   -webkit-user-select: none;
@@ -33,7 +33,7 @@
       -ms-flex-pack: center;
           justify-content: center;
   padding: 0 15px 0 15px;
-  background-color: #ffe0d4;
+  background-color: #d4f0f3;
   padding-bottom: 20px;
 }
 

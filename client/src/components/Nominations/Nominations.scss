@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
 .nominationsWrapper {
-  border: 5px outset #c05c34;
-  background-color: #ffe0d4;
+  border: 5px outset #588bae;
+  background-color: #d4f0f3;
   .noNominations {
     h3 {
       padding: 25px;
@@ -12,10 +12,10 @@
 
   .bannerContainer {
     text-align: center;
-    background-color: #ffe0d4;
+    background-color: #d4f0f3;
     h1 {
       font-family: 'Lobster', cursive;
-      color: #c05c34;
+      color: #588bae;
       margin: 10px 0 10px 0;
       font-size: 40px;
       user-select: none;
@@ -26,7 +26,7 @@
     display: flex;
     justify-content: center;
     padding: 0 15px 0 15px;
-    background-color: #ffe0d4;
+    background-color: #d4f0f3;
     padding-bottom: 20px;
     @media only screen and (max-width: 750px) {
       flex-wrap: wrap;
