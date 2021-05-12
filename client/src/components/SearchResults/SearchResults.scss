@@ -6,8 +6,8 @@
     margin: 10px auto 10px auto;
     max-width: 500px;
     padding: 5px;
-    background-color: rgb(197, 228, 255);
-    box-shadow: 1px 1px 3px 3px #868bd3;
+    background-color: white;
+    box-shadow: 1px 1px 3px 3px rgb(197, 228, 255);
     .resultPoster {
       width: 125px;
       height: 100%;
@@ -23,13 +23,13 @@
         }
         .Collapsible__trigger {
           display: block;
-          background-color: rgb(189, 189, 189);
+          background-color: rgb(209, 209, 209);
           color: rgb(54, 54, 54);
           padding: 5px 0 5px 10px;
           font-weight: bold;
         }
         .Collapsible__contentOuter {
-          border: 1px solid rgb(189, 189, 189);
+          border: 1px solid rgb(209, 209, 209);
           background-color: rgb(241, 241, 241);
         }
       }
