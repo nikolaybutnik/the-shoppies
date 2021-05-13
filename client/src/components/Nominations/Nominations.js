@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Nominations.css'
 
-import { removeNomination } from '../../utils/ServerCalls'
+import { removeNomination, allNominations } from '../../utils/ServerCalls'
 
 import { IconContext } from 'react-icons'
 import { TiDelete } from 'react-icons/ti'
@@ -9,6 +9,10 @@ import { TiDelete } from 'react-icons/ti'
 const Nominations = ({
   props: { existingNominations, setExistingNominations },
 }) => {
+  useEffect(() => {
+    allNominations(setExistingNominations)
+  }, [setExistingNominations])
+
   const handleDelete = (e) => {
     const [, deleteID] = e.currentTarget.parentNode.id.split('+')
     removeNomination(deleteID, setExistingNominations)
