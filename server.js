@@ -25,7 +25,7 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/theshoppies', {
 })
 
 // Define API routes here
-app.get('/getmovies/:search/:page', (req, res) => {
+app.get('/movies/:search/:page', (req, res) => {
   fetch(
     `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_API_KEY}&s=${req.params.search}&type=movie&page=${req.params.page}`
   )
@@ -39,7 +39,7 @@ app.get('/getmovies/:search/:page', (req, res) => {
 })
 
 // Route which handles saving new nominations to DB
-app.post('/newnomination', async (req, res) => {
+app.post('/nomination', async (req, res) => {
   try {
     // Check if movie is already nominated
     const movieNominated = !!(await Nomination.countDocuments({
@@ -63,7 +63,7 @@ app.post('/newnomination', async (req, res) => {
 })
 
 // Route which handles checking the DB for existing nominations
-app.get('/allnominations', async (req, res) => {
+app.get('/nominations', async (req, res) => {
   try {
     const allNominations = await Nomination.find({})
     res.status(200).send({ data: allNominations })
@@ -73,7 +73,7 @@ app.get('/allnominations', async (req, res) => {
 })
 
 // Route which handles the deletion of movie from DB
-app.delete('/removenomination/:id', async (req, res) => {
+app.delete('/nomination/:id', async (req, res) => {
   try {
     const deletedItem = await Nomination.findOneAndDelete({
       imdbID: req.params.id,
@@ -88,7 +88,7 @@ app.delete('/removenomination/:id', async (req, res) => {
 })
 
 // Route which handles fetching of movie plot
-app.get('/getplot/:id', (req, res) => {
+app.get('/plot/:id', (req, res) => {
   fetch(
     `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_API_KEY}&i=${req.params.id}&plot=full`
   )

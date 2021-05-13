@@ -1,5 +1,5 @@
 const removeNomination = (id, callback) => {
-  fetch(`/removenomination/${id}`, {
+  fetch(`/nomination/${id}`, {
     method: 'DELETE',
     headers: {
       Accept: 'application/json, text/plain, */*',
@@ -14,7 +14,7 @@ const removeNomination = (id, callback) => {
 }
 
 const getPlot = (id, type) => {
-  fetch(`/getplot/${id}`, {
+  fetch(`/plot/${id}`, {
     method: 'GET',
     headers: {
       Accept: 'application/json, text/plain, */*',
@@ -31,7 +31,7 @@ const getPlot = (id, type) => {
 }
 
 const getMovies = (search, page, callback) => {
-  fetch(`/getmovies/${search}/${page}`, {
+  fetch(`/movies/${search}/${page}`, {
     method: 'GET',
     headers: {
       Accept: 'application/json, text/plain, */*',
@@ -46,7 +46,7 @@ const getMovies = (search, page, callback) => {
 }
 
 const allNominations = (callback) => {
-  fetch('/allnominations', {
+  fetch('/nominations', {
     method: 'GET',
     headers: {
       Accept: 'application/json, text/plain, */*',
@@ -59,7 +59,7 @@ const allNominations = (callback) => {
 }
 
 const newNomination = (e, newData, callback) => {
-  fetch('/newnomination', {
+  fetch('/nomination', {
     method: 'POST',
     body: JSON.stringify(newData),
     headers: {
