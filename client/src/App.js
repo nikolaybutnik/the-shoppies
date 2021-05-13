@@ -9,12 +9,18 @@ import Footer from './components/Footer/Footer'
 import { IconContext } from 'react-icons'
 import { BiDownArrow } from 'react-icons/bi'
 
+import { allNominations } from './utils/ServerCalls'
+
 function App() {
   const [searchTerm, setSearchTerm] = useState('')
   const [searchResults, setSearchResults] = useState(null)
   const [currentPage, setCurrentPage] = useState(1)
   const [existingNominations, setExistingNominations] = useState([])
   const [viewNominations, setViewNominations] = useState(false)
+
+  useEffect(() => {
+    allNominations(setExistingNominations)
+  }, [setExistingNominations])
 
   useEffect(() => {
     fetch('/allnominations', {
