@@ -4,8 +4,6 @@ import './Footer.css'
 import { IconContext } from 'react-icons'
 import { FaTrophy } from 'react-icons/fa'
 
-// import Ticker from 'react-ticker'
-
 const Footer = ({ props: { existingNominations } }) => {
   let movies = existingNominations
     .map((movie) => movie.title)
@@ -27,16 +25,6 @@ const Footer = ({ props: { existingNominations } }) => {
       <p className="marquee">
         <span>{movies}</span>
       </p>
-      {/* <Ticker offset="100%">
-        {({ index }) => {
-          console.log(index)
-          return (
-            <>
-              <h5 style={{ margin: '1px 0 10px 0' }}>{movies}</h5>
-            </>
-          )
-        }}
-      </Ticker> */}
     </div>
   )
 }
