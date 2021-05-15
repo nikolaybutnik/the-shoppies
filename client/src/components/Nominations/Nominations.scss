@@ -3,6 +3,7 @@
 .nominationsWrapper {
   border: 5px outset #588bae;
   background-color: #d4f0f3;
+  margin: 0 15px 0 15px;
   .noNominations {
     h3 {
       padding: 25px;
@@ -31,25 +32,26 @@
     @media only screen and (max-width: 750px) {
       flex-wrap: wrap;
     }
-    @media only screen and (max-width: 537px) {
+    @media only screen and (max-width: 555px) {
       margin: 0;
     }
     .nomination {
       position: relative;
       text-align: center;
-      margin: 5px;
+      margin: 8px;
       border: none;
       width: 200px;
       padding: 5px;
       box-shadow: 1px 1px 3px 3px #96c045;
       background-color: rgb(229, 255, 204);
+      border-radius: 10px;
       @media only screen and (max-width: 750px) {
         width: 150px;
       }
-      @media only screen and (max-width: 537px) {
+      @media only screen and (max-width: 555px) {
         display: flex;
         width: 100%;
-        margin: 5px 0 5px 0;
+        margin: 8px 0 8px 0;
       }
       .posterContainer {
         display: flex;
@@ -57,14 +59,15 @@
         align-items: center;
         justify-content: center;
         margin-top: 20px;
-        @media only screen and (max-width: 537px) {
+        padding-left: 5px;
+        @media only screen and (max-width: 555px) {
           margin: 0;
         }
         .nominationPoster {
           width: 125px;
           height: auto;
           border: 5px outset #96c045;
-          @media only screen and (max-width: 537px) {
+          @media only screen and (max-width: 555px) {
             margin: auto 0 auto 0;
           }
         }
@@ -74,7 +77,8 @@
         font-weight: bold;
         margin: 5px 0 5px 0;
         width: 100%;
-        @media only screen and (max-width: 537px) {
+        user-select: none;
+        @media only screen and (max-width: 555px) {
           display: flex;
           padding: 0 25px 0 10px;
           align-items: center;
