@@ -22,21 +22,6 @@ function App() {
     allNominations(setExistingNominations)
   }, [setExistingNominations])
 
-  useEffect(() => {
-    fetch('/allnominations', {
-      method: 'GET',
-      headers: {
-        Accept: 'application/json, text/plain, */*',
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setExistingNominations(data.data)
-      })
-      .catch((err) => console.log(err))
-  }, [])
-
   const props = {
     searchTerm,
     setSearchTerm,
