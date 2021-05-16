@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 .nominationsWrapper {
-  border: 5px outset #588bae;
-  background-color: #d4f0f3;
+  border: 5px outset #fff1d9;
+  background-color: #fff1d9;
   margin: 0 15px 0 15px;
 }
 
@@ -12,12 +12,12 @@
 
 .nominationsWrapper .bannerContainer {
   text-align: center;
-  background-color: #d4f0f3;
+  background-color: #fff1d9;
 }
 
 .nominationsWrapper .bannerContainer h1 {
   font-family: 'Lobster', cursive;
-  color: #588bae;
+  color: #a58652;
   margin: 10px 0 10px 0;
   font-size: 40px;
   -webkit-user-select: none;
@@ -34,7 +34,7 @@
       -ms-flex-pack: center;
           justify-content: center;
   padding: 0 15px 0 15px;
-  background-color: #d4f0f3;
+  background-color: #fff1d9;
   padding-bottom: 20px;
 }
 
@@ -58,9 +58,9 @@
   border: none;
   width: 200px;
   padding: 5px;
-  -webkit-box-shadow: 1px 1px 3px 3px #96c045;
-          box-shadow: 1px 1px 3px 3px #96c045;
-  background-color: #e5ffcc;
+  -webkit-box-shadow: 1px 1px 3px 3px #ede091;
+          box-shadow: 1px 1px 3px 3px #ede091;
+  background-color: white;
   border-radius: 10px;
 }
 
@@ -104,7 +104,7 @@
 .nominationsWrapper .allNominations .nomination .posterContainer .nominationPoster {
   width: 125px;
   height: auto;
-  border: 5px outset #96c045;
+  border: 5px outset #f8e4c2;
 }
 
 @media only screen and (max-width: 555px) {
