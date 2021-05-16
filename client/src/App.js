@@ -45,7 +45,7 @@ function App() {
             <IconContext.Provider value={{ size: '15px' }}>
               <BiDownArrow className="arrowDown" />
             </IconContext.Provider>
-            View Nominations
+            {!viewNominations ? 'View Nominations' : 'Hide Nominations'}
             <IconContext.Provider value={{ size: '15px' }}>
               <BiDownArrow className="arrowDown" />
             </IconContext.Provider>
