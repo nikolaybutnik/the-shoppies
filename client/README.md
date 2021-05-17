@@ -30,6 +30,7 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
+    <li><a href="#usage">Usage</a></li>
   </ol>
 </details>
 
@@ -77,3 +78,11 @@ To get a local copy up and running follow these simple steps.
    ```sh
    npm start
    ```
+
+## Usage
+
+Using The Shoppies is really simple! Start typping the name of the movie you're looking for in the search bar, and the results will be displayed dynamically. If you want to nominate one of the search reaults for an award, simply click `Nominate!`. You can nominate a maximum of five movies, after which the `Nominate!` buttons will be disabled.
+
+You can view all your nominations with the `View Nominations` button. If you no longer feel that a movie deserves an award, simply remove it with a click of the red `x` button.
+
+Once all five movies are nominated, you can see running text with the nominated movie names in the footer.
