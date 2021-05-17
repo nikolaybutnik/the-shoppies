@@ -23,6 +23,13 @@
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
   </ol>
 </details>
 
@@ -41,3 +48,32 @@ The following technologies and libraries were used in the creation of The Shoppi
 - [MongoDB](https://www.mongodb.com/)
 - [React Icons](https://react-icons.github.io/react-icons/)
 - [OMDb API](https://www.omdbapi.com/)
+
+## Getting Started
+
+To get a local copy up and running follow these simple steps.
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/en/download/)
+
+### Installation
+
+1. Get a free API Key at [https://www.omdbapi.com/apikey.aspx](https://www.omdbapi.com/apikey.aspx)
+2. Clone the repo
+   ```sh
+   git clone https://github.com/nikolaybutnik/the-shoppies.git
+   ```
+3. Install NPM packages
+   ```sh
+   npm install
+   ```
+4. In the root folder create a file called `.env`
+5. Enter your API key in `.env`
+   ```JS
+   REACT_APP_OMDB_API_KEY='ENTER YOUR API KEY';
+   ```
+6. You're done! Start the application
+   ```sh
+   npm start
+   ```
