@@ -34,6 +34,7 @@
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
 
@@ -109,3 +110,7 @@ Contributions are what make the open source community such an amazing place to b
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
+
+## Contact
+
+Nikolay Butnik - [LinkedIn](https://www.linkedin.com/in/nikolay-butnik/) - btnk.nik@gmail.com - [@nikolaybutnik](https://twitter.com/nikolaybutnik)
