@@ -14,6 +14,18 @@
     <a href="https://github.com/nikolaybutnik/the-shoppies/issues">Request Feature</a>
 </p>
 
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+  </ol>
+</details>
+
 ## About The Project
 
 ![The Shoppies Screenshot](https://github.com/nikolaybutnik/the-shoppies/blob/master/client/public/the-shoppies-screenshot-v3.png?raw=true)
