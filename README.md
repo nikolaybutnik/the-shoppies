@@ -35,6 +35,7 @@
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
 
@@ -114,3 +115,10 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ## Contact
 
 Nikolay Butnik - [LinkedIn](https://www.linkedin.com/in/nikolay-butnik/) - btnk.nik@gmail.com - [@nikolaybutnik](https://twitter.com/nikolaybutnik)
+
+## Acknowledgements
+
+- [Choose an Open Source License](https://choosealicense.com)
+- [React Icons](https://react-icons.github.io/react-icons/)
+- [React Collapsible](https://www.npmjs.com/package/react-collapsible)
+- [Heroku](https://heroku.com)
