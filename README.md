@@ -88,7 +88,7 @@ To get a local copy up and running follow these simple steps.
 
 ## Usage
 
-Using The Shoppies is really simple! Start typping the name of the movie you're looking for in the search bar, and the results will be displayed dynamically. If you want to nominate one of the search reaults for an award, simply click `Nominate!`. You can nominate a maximum of five movies, after which the `Nominate!` buttons will be disabled.
+Using The Shoppies is really simple! Start typing the name of the movie you're looking for in the search bar, and the results will be displayed dynamically. If you want to nominate one of the search reaults for an award, simply click `Nominate!`. You can nominate a maximum of five movies, after which the `Nominate!` buttons will be disabled.
 
 You can view all your nominations with the `View Nominations` button. If you no longer feel that a movie deserves an award, simply remove it with a click of the red `x` button.
 
