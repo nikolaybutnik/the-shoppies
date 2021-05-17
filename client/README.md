@@ -56,7 +56,9 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/en/download/)
+- [Node.js](https://nodejs.org/en/download/) - Install the Node Package Manager
+- [MongoDB](https://www.mongodb.com/try) - Set up a local MongoDB environment
+- Create a database named `theshoppies`, witch a collection named `nominations`
 
 ### Installation
 
